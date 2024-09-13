@@ -1,23 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "Vendelapp" %></title>
+    <title>Vendelapp</title>
+    <link rel="icon" href="<%= asset_path 'favicon.ico' %>" type="image/x-icon" />
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= yield :head %>
-
-    <link rel="manifest" href="/manifest.json">
-    <link rel="icon" href="/icon.png" type="image/png">
-    <link rel="icon" href="/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/icon.png">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
+    <style>
+      
+    </style>
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'shared/header' %>
+    <div class="content">
+      <%= yield %>
+    </div>
+    <footer style="position:relative; top:auto; bottom:0">
+      <p>Desarrollado por L&B</p>
+      <p>
+        <a href="https://github.com/Matijasevic-Emer" target="_blank">GitHub</a> |
+        <a href="https://www.linkedin.com/in/emerson-matijasevic/" target="_blank">LinkedIn</a> |
+        <a href="https://www.youtube.com/watch?v=0Qj3LUxx3Zg&list=PLP06kydD_xaUS6plnsdonHa5ySbPx1PrP&index=2" target="_blank">Inspiración</a>
+        
+      </p>
+    </footer>
   </body>
 </html>

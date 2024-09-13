@@ -13,3 +13,198 @@
  *= require_tree .
  *= require_self
  */
+ :root {
+    --background-color: #EEEEEE;
+    --header-background-color: #201E43;
+    --header-text-color: #EEEEEE;
+    --footer-background-color: #134B70;
+    --footer-text-color: #EEEEEE;
+    --link-color: #508C9B;
+    --text-color: #201E43;
+    --accent-color: #201E43;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    background-color: var(--header-background-color);
+    color: var(--header-text-color);
+    padding: 20px;
+    text-align: center;
+  }
+
+  footer {
+    background-color: var(--footer-background-color);
+    color: var(--footer-text-color);
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+  }
+
+  footer a {
+    color: var(--link-color);
+    text-decoration: none;
+    margin: 0 10px;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+  .content {
+    padding: 20px;
+  }
+
+
+/*--------------------------------------------------------------------------------*/
+/*-----------------------------------PRODUCTO------------------------------------*/
+/*------------------------------------------------------------------------------*/
+  .productCard {
+    box-shadow: 0px 10px 15px -3px rgba(45, 101, 173, 0.1);
+    border-radius: 5px;
+    margin:20px; padding:5px;
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+
+
+.product-title {
+    text-align: center;
+    color: var(--header-background-color);
+    margin-top: 20px;
+  }
+  
+  .product-container {
+    border: 2px dotted var(--border-color);
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--background-color);
+  }
+  
+  .product-image-container {
+    width: 80%;
+    max-width: 500px;
+    margin: 20px 0;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--background-color);
+  }
+  
+  .product-image {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .product-description, .product-price {
+    margin: 10px 0;
+  }
+  
+  .product-price {
+    font-size: 1.5em;
+    color: var(--accent-color);
+  }
+
+
+  @keyframes heartbeat {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      color: var(--header-background-color);
+      transform: scale(1.4);
+      background-color: var(--link-color);
+      opacity: 0.4;
+    }
+  }
+  
+  .highlight {
+    animation: heartbeat 2s ease-in-out;
+  }
+  
+  
+
+
+  .product-form {
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-color);
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  .form-input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 5px var(--accent-color);
+  }
+  
+  .form-submit {
+    background-color: var(--link-color);
+    margin: auto;
+   display: block;
+    color: var(--header-text-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .form-submit:hover {
+    background-color: var(--header-background-color);
+    
+  }
+  
+/*---------------------------------------------------------------------------------*/
+/*------------------------------------links---------------------------------------*/
+/*-------------------------------------------------------------------------------*/
+
+  .back-link {
+    display: block;
+    text-align: center;
+    margin: 20px 0;
+    text-decoration: none;
+    color: var(--link-color);
+  }
+  
+  .back-link:hover {
+    text-decoration: underline;
+  }
+
+ a {
+
+    text-decoration: none;
+    color: var(--link-color);
+  }
+  
+ a {
+    text-decoration: underline;
+  }
