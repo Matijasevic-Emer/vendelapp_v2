@@ -1,0 +1,40 @@
+hr:
+  activerecord:
+    models:
+      product: Proizvod
+    attributes:
+      product:
+        title: 'Naslov'
+        description: 'Opis'
+        price: 'Cijena (ARS$)'
+        photo: 'Fotografija'
+    errors:
+      models:
+        product:
+          attributes:
+            title:
+              blank: 'ne smije biti prazno'
+            description:
+              blank: 'ne smije biti prazno'
+            price:
+              blank: 'ne smije biti prazno'
+
+  common:
+    confirm: 'Jesi li siguran?'
+  shared:
+    form:
+      title: 'Budala i njegov novac brzo se rastanu!'
+  products:
+    edit:
+      title: 'Uredi proizvod'
+    show:
+      title: 'Kupi odmah!'
+    index:
+      title: 'Proizvodi'
+      sub-title: 'Prodaj jedan+'
+    create:
+      created: 'Tvoj proizvod je uspješno kreiran'
+    update:
+      updated: 'Tvoj proizvod je uspješno ažuriran'
+    destroy:
+      destroyed: 'Tvoj proizvod je uspješno izbrisan'

@@ -1,0 +1,8 @@
+  <div class="productCard">
+    <%= link_to product_path(product.id) do %>
+      <h3><%= product.title %></h3>
+      <%= image_tag(product.photo, alt: product.title, class: "product-image-list") if product.photo.present? %>
+    <% end %>
+    <div><%= product.description %></div>
+    <div>ARS$ <%= product.price %></div>
+  </div>

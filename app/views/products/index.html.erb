@@ -1,13 +1,6 @@
-<h2>Productos</h2>
+<h2><%= t('.title') %> </h2>
 <%= link_to new_product_path do %>
-  <h3>+Vender uno</h3>
+  <h3><%= t('.sub-title') %> </h3>
 <% end %>
-<% @products.each_with_index do |product, index| %>
-  <div class="productCard <%= 'highlight' if index == 0 %>">
-    <%= link_to product_path(product.id) do %>
-      <h3><%= product.title %></h3>
-    <% end %>
-    <div><%= product.description %></div>
-    <div>ARS$ <%= product.price %></div>
-  </div>
-<% end %>
+
+<%= render partial: 'product', collection: @products %>

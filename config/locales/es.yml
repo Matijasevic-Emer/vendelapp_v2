@@ -1,0 +1,72 @@
+es:
+  activerecord:
+    models:
+      product: Producto
+      category: Categoria
+    attributes:
+      category:
+        name: 'Nombre'
+      product:
+        title: 'Titulo'
+        description: 'Describelo'
+        price: 'ARS$'
+        photo: 'Foto'
+        category_id: 'Categoria'
+    errors:
+      models:
+        product:
+          attributes:
+            title:
+              blank: 'no puede estar vacio'
+            description:
+              blank: 'no puede estar vacio'
+            price:
+              blank: 'no puede estar vacio'
+            category_id:
+              blank: 'no puede estar vacio'
+        category:
+          attributes:
+            name:
+              blank: 'no puede estar vacio'
+
+  common:
+    confirm: 'Estas seguro?'
+  shared:
+    header:
+      category: 'categorias'
+  categories:
+    edit:
+      title: 'Editar categoria'
+      back: 'Volver'
+    new:
+      title: 'Crea una nueva Categoria'
+      back: 'Volver'
+    index:
+      title: 'Categorias'
+      new: 'Agregar una'
+    category:
+      edit: 'Editar'
+      delete: 'Eliminar'
+    create:
+      created: 'Categoria creada exitosamente'
+    update:
+      updated: 'Categoria modificada exitosamente'
+    destroy:
+      destroyed: 'Categoria eliminada exitosamente'
+
+  products:
+    form:
+      title: '¡Un tonto y su dinero son facilmente separados!'#'¡La basura de uno es el tesoro de otro!'
+    edit:
+      title: 'Editar producto'
+    show:
+      title: '¡Cómpralo!'
+    index:
+      title: 'Productos'
+      sub-title: 'Vender uno+'
+    create:
+      created: 'Tu producto ha sido creado exitosamente'
+    update:
+      updated: 'Tu producto ha sido modificado exitosamente'
+    destroy:
+      destroyed: 'Tu producto ha sido eliminado exitosamente'

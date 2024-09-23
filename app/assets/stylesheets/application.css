@@ -108,6 +108,11 @@
     width: 100%;
     border-radius: 10px;
   }
+.product-image-list {
+    height: 100%;
+    width: 200px;
+    border-radius: 20px;
+}
   
   .product-description, .product-price {
     margin: 10px 0;

@@ -23,5 +23,10 @@ module Vendelapp
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # Declaro que idiomas estaran disponibles en nuestra aplicacion
+    config.i18n.available_locales = [:en, :es, :hr]
+
+    config.i18n.default_locale = :es
   end
 end
