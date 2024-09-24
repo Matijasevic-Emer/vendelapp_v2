@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
     def index
+        @categories = Category.all.order(name: :asc)
         #declaro una variable de instancia, la misma puede ser accedida en la view
         @products = Product.order(id: :desc).with_attached_photo
     end
