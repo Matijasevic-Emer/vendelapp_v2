@@ -2,5 +2,5 @@
 <%= link_to new_product_path do %>
   <h3><%= t('.sub-title') %> </h3>
 <% end %>
-
+<%= render partial: 'category', collection:@categories %>
 <%= render partial: 'product', collection: @products %>
