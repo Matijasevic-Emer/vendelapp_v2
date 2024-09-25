@@ -1,61 +1,23 @@
 <header>
-  <%= link_to products_path do %>
-    <h1>Vendelapp</h1>
-  <% end %>
+  <div class="brand">
+      <%= link_to products_path do %>
+        <h1 class="textHeader"><%= t('app_name') %> </h1>
+      <% end %>
+  </div>
+  <div class="settings">
+      <%= link_to categories_path do %>
+        <h3 class="textHeader"><%= t('.category') %> </h3>
+      <% end %>
 
-  <%= link_to categories_path do %>
-    <h3><%= t('.category') %> </h3>
-  <% end %>
-
-  <!-- Dropdown for language selection -->
-  <div class="dropdown">
-    <button class="dropbtn">Idioma</button>
-    <div class="dropdown-content">
-      <%= link_to 'Inglés: 🇬🇧', url_for(locale: 'en'), class: 'language-link' %>
-      <%= link_to 'Español: 🇪🇸', url_for(locale: 'es'), class: 'language-link' %>
-      <%= link_to 'Croata: 🇭🇷', url_for(locale: 'hr'), class: 'language-link' %>
-    </div>
+      <!-- Dropdown for language selection -->
+      <div class="dropdown">
+        <button class="dropbtn">Idioma</button>
+        <div class="dropdown-content">
+          <%= link_to 'Inglés: 🇬🇧', url_for(locale: 'en'), class: 'language-link' %>
+          <%= link_to 'Español: 🇪🇸', url_for(locale: 'es'), class: 'language-link' %>
+          <%= link_to 'Croata: 🇭🇷', url_for(locale: 'hr'), class: 'language-link' %>
+        </div>
+      </div>
   </div>
 </header>
 
-<style>
-    .dropdown {
-        position: relative;
-        display: inline-block;
-    }
-
-    .dropbtn {
-        background-color: #4CAF50;
-        color: white;
-        padding: 10px;
-        font-size: 16px;
-        border: none;
-        cursor: pointer;
-    }
-
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f1f1f1;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;
-    }
-
-    .dropdown-content a {
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-    }
-
-    .dropdown-content a:hover {background-color: #ddd;}
-
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
-
-    .dropdown:hover .dropbtn {
-        background-color: #3e8e41;
-    }
-</style>

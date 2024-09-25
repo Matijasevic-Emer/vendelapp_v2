@@ -1,4 +1,6 @@
 es:
+  app_name: 'SocialMarket'
+  meta_title: '¡Compra y Vende productos de segunda mano!'
   activerecord:
     models:
       product: Producto
@@ -68,6 +70,9 @@ es:
       min_price: 'Desde ARS$'
       max_price: 'Hasta ARS$'
       query_text: 'Que deseas buscar?'
+      newest: 'Mas recientes primero'
+      expensivest: 'Mas caros primero'
+      cheapest: 'Mas baratos primero'
     create:
       created: 'Tu producto ha sido creado exitosamente'
     update:

@@ -1,23 +1,32 @@
 class ProductsController < ApplicationController
     def index
+        # @products = Product.with_attached_photo
+        #
+        # # Aplicar filtros si existen
+        # if params[:query_text].present?
+        #     query = "%#{params[:query_text].downcase}%"
+        #     @products = @products.where('LOWER(title) LIKE ? OR LOWER(description) LIKE ?', query, query)
+        # end
+        #
+        # if params[:min_price].present?
+        #     @products = @products.where('price >= ?', params[:min_price])
+        # end
+        #
+        # if params[:max_price].present?
+        #     @products = @products.where('price <= ?', params[:max_price])
+        # end
+        #
+        # if params[:category_id]
+        #     @products = @products.where(category_id: params[:category_id])
+        # end
+        #
+        #
+        #
+        # @products = @products.order(order_by).load_async
 
-        @products = Product.order(id: :desc).with_attached_photo.load_async
-        if params[:query_text].present?
-            query = "%#{params[:query_text].downcase}%"
-            @products = @products.where('LOWER(title) LIKE ? OR LOWER(description) LIKE ?', query, query)
-        end
-        if params[:min_price].present?
-            @products = @products.where('price >= ?',params[:min_price])
-        end
-        if params[:max_price].present?
-            @products = @products.where('price <= ?',params[:max_price])
-        end
-        if params[:category_id]
-            @products = @products.where(category_id: params[:category_id])
-        end
+        # Paginación
+        @pagy, @products = pagy_countless(FindProducts.new.call(product_params_index).load_async, items: 2)
         @categories = Category.all.order(name: :asc).load_async
-        #declaro una variable de instancia, la misma puede ser accedida en la view
-
     end
 
     def show
@@ -69,6 +78,10 @@ class ProductsController < ApplicationController
     private
     def product_params
         params.require(:product).permit(:title, :description, :price , :photo , :category_id)
+    end
+
+    def product_params_index
+        params.permit(:query_text,:max_price, :min_price, :category_id,:order_by)
     end
 
     def product
