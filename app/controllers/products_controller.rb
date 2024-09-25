@@ -1,8 +1,23 @@
 class ProductsController < ApplicationController
     def index
-        @categories = Category.all.order(name: :asc)
+
+        @products = Product.order(id: :desc).with_attached_photo.load_async
+        if params[:query_text].present?
+            query = "%#{params[:query_text].downcase}%"
+            @products = @products.where('LOWER(title) LIKE ? OR LOWER(description) LIKE ?', query, query)
+        end
+        if params[:min_price].present?
+            @products = @products.where('price >= ?',params[:min_price])
+        end
+        if params[:max_price].present?
+            @products = @products.where('price <= ?',params[:max_price])
+        end
+        if params[:category_id]
+            @products = @products.where(category_id: params[:category_id])
+        end
+        @categories = Category.all.order(name: :asc).load_async
         #declaro una variable de instancia, la misma puede ser accedida en la view
-        @products = Product.order(id: :desc).with_attached_photo
+
     end
 
     def show

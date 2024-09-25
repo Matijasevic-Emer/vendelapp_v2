@@ -64,6 +64,10 @@ es:
     index:
       title: 'Productos'
       sub-title: 'Vender uno+'
+      all: 'Todos'
+      min_price: 'Desde ARS$'
+      max_price: 'Hasta ARS$'
+      query_text: 'Que deseas buscar?'
     create:
       created: 'Tu producto ha sido creado exitosamente'
     update:
