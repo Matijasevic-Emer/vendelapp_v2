@@ -4,61 +4,71 @@ es:
   activerecord:
     models:
       product: Producto
-      category: Categoria
+      category: Categoría
     attributes:
       category:
         name: 'Nombre'
       product:
-        title: 'Titulo'
-        description: 'Describelo'
+        title: 'Título'
+        description: 'Descripción'
         price: 'ARS$'
         photo: 'Foto'
-        category_id: 'Categoria'
+        category_id: 'Categoría'
     errors:
       models:
         product:
           attributes:
             title:
-              blank: 'no puede estar vacio'
+              blank: 'no puede estar vacío'
             description:
-              blank: 'no puede estar vacio'
+              blank: 'no puede estar vacío'
             price:
-              blank: 'no puede estar vacio'
+              blank: 'no puede estar vacío'
             category_id:
-              blank: 'no puede estar vacio'
+              blank: 'no puede estar vacío'
         category:
           attributes:
             name:
-              blank: 'no puede estar vacio'
+              blank: 'no puede estar vacío'
 
   common:
-    confirm: 'Estas seguro?'
+    not_logged: 'Debe iniciar sesión para continuar'
+    confirm: '¿Estás seguro?'
   shared:
     header:
-      category: 'categorias'
+      category: 'Categorías'
   categories:
     edit:
-      title: 'Editar categoria'
+      title: 'Editar categoría'
       back: 'Volver'
     new:
-      title: 'Crea una nueva Categoria'
+      title: 'Crea una nueva Categoría'
       back: 'Volver'
     index:
-      title: 'Categorias'
+      title: 'Categorías'
       new: 'Agregar una'
     category:
       edit: 'Editar'
       delete: 'Eliminar'
     create:
-      created: 'Categoria creada exitosamente'
+      created: 'Categoría creada exitosamente'
     update:
-      updated: 'Categoria modificada exitosamente'
+      updated: 'Categoría modificada exitosamente'
     destroy:
-      destroyed: 'Categoria eliminada exitosamente'
+      destroyed: 'Categoría eliminada exitosamente'
+
+  authentication:
+    users:
+      create:
+        created: '¡Perfecto! ¡Ya te registramos!'
+    sessions:
+      create:
+        created: '¡Bienvenido!'
+        failed: 'Login o Contraseña inválidos'
 
   products:
     form:
-      title: '¡Un tonto y su dinero son facilmente separados!'#'¡La basura de uno es el tesoro de otro!'
+      title: '¡Un tonto y su dinero son fácilmente separados!'
     edit:
       title: 'Editar producto'
     show:
@@ -69,10 +79,10 @@ es:
       all: 'Todos'
       min_price: 'Desde ARS$'
       max_price: 'Hasta ARS$'
-      query_text: 'Que deseas buscar?'
-      newest: 'Mas recientes primero'
-      expensivest: 'Mas caros primero'
-      cheapest: 'Mas baratos primero'
+      query_text: '¿Qué deseas buscar?'
+      newest: 'Más recientes primero'
+      expensivest: 'Más caros primero'
+      cheapest: 'Más baratos primero'
     create:
       created: 'Tu producto ha sido creado exitosamente'
     update:

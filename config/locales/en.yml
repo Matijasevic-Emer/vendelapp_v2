@@ -1,37 +1,88 @@
 en:
+  app_name: 'SocialMarket'
+  meta_title: 'Buy and Sell second-hand products!'
   activerecord:
     models:
       product: Product
+      category: Category
     attributes:
+      category:
+        name: 'Name'
       product:
         title: 'Title'
         description: 'Description'
-        price: 'Price (ARS$)'
+        price: 'Price'
         photo: 'Photo'
+        category_id: 'Category'
     errors:
       models:
         product:
           attributes:
             title:
-              blank: 'cannot be blank'
+              blank: 'can\'t be blank'
             description:
-              blank: 'cannot be blank'
+              blank: 'can\'t be blank'
             price:
-              blank: 'cannot be blank'
+              blank: 'can\'t be blank'
+            category_id:
+              blank: 'can\'t be blank'
+        category:
+          attributes:
+            name:
+              blank: 'can\'t be blank'
 
   common:
+    not_logged: 'You must log in to continue'
     confirm: 'Are you sure?'
   shared:
-    form:
-      title: 'A fool and his money are soon parted!'
+    header:
+      category: 'Categories'
+  categories:
+    edit:
+      title: 'Edit category'
+      back: 'Back'
+    new:
+      title: 'Create a new Category'
+      back: 'Back'
+    index:
+      title: 'Categories'
+      new: 'Add one'
+    category:
+      edit: 'Edit'
+      delete: 'Delete'
+    create:
+      created: 'Category created successfully'
+    update:
+      updated: 'Category updated successfully'
+    destroy:
+      destroyed: 'Category deleted successfully'
+
+  authentication:
+    users:
+      create:
+        created: 'Perfect! You are registered!'
+    sessions:
+      create:
+        created: 'Welcome!'
+        failed: 'Invalid Login or Password'
+
   products:
+    form:
+      title: 'A fool and his money are easily parted!'
     edit:
       title: 'Edit product'
     show:
-      title: 'Buy it now!'
+      title: 'Buy it!'
     index:
       title: 'Products'
       sub-title: 'Sell one+'
+      all: 'All'
+      min_price: 'From ARS$'
+      max_price: 'To ARS$'
+      query_text: 'What are you looking for?'
+      newest: 'Newest first'
+      expensivest: 'Most expensive first'
+      cheapest: 'Cheapest first'
     create:
       created: 'Your product has been successfully created'
     update:

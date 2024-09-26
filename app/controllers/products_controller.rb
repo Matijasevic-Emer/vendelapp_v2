@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+    skip_before_action :protect_pages, only: [:show , :index]
+
     def index
         # @products = Product.with_attached_photo
         #

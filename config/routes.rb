@@ -14,4 +14,9 @@ Rails.application.routes.draw do
   #Escribir resources products es equivalente a poner las 7 lineas de arriba
   resources :products, path: '/'
   resources :categories, except: :show
+
+  namespace :authentication, path: '', as: '' do
+    resources :users, only: [:new, :create]
+    resources :sessions, only: [:new, :create]
+  end
 end

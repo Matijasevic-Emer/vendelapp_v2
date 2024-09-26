@@ -1,11 +1,11 @@
 <%= turbo_frame_tag 'home' do %>
 
   <h2><%= t('.title') %> </h2>
-  <%= link_to new_product_path do %>
+  <%= link_to new_product_path,  'data-turbo-frame': '_top' do %>
     <h3><%= t('.sub-title') %> </h3>
   <% end %>
 
-  <%= form_with url: products_path, method: :get do |form| %>
+  <%= form_with url: products_path, class: 'filterForm', method: :get do |form| %>
     <div>
       <%= form.text_field :query_text, placeholder: t('.query_text'), onChange: 'this.form.requestSubmit()',value: params[:query_text] %>
     </div>
