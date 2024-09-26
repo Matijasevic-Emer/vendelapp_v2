@@ -41,6 +41,8 @@ class ProductsController < ApplicationController
     end
 
     def create
+        #@product = Current.user.products.new(product_params)
+        # se cambia a metodo de asignar el usuario logeado directamente en el modelo
         @product = Product.new(product_params)
         if @product.save
             redirect_to products_path, notice: t('.created')

@@ -18,6 +18,7 @@ class User < ApplicationRecord
             length: {minimum: 6}
   before_save :downcase_attributes
 
+  has_many :products, dependent: :destroy
   private
   def downcase_attributes
     self.username = username.downcase

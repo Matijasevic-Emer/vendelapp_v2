@@ -19,17 +19,17 @@ en:
         product:
           attributes:
             title:
-              blank: 'can\'t be blank'
+              blank: 'cannot be blank'
             description:
-              blank: 'can\'t be blank'
+              blank: 'cannot be blank'
             price:
-              blank: 'can\'t be blank'
+              blank: 'cannot be blank'
             category_id:
-              blank: 'can\'t be blank'
+              blank: 'cannot be blank'
         category:
           attributes:
             name:
-              blank: 'can\'t be blank'
+              blank: 'cannot be blank'
 
   common:
     not_logged: 'You must log in to continue'
