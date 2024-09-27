@@ -3,9 +3,14 @@ es:
   meta_title: '¡Compra y Vende productos de segunda mano!'
   activerecord:
     models:
+      user: Usuario
       product: Producto
       category: Categoría
     attributes:
+      user:
+        username: 'Nombre de Usuario'
+        password: 'Contraseña'
+        email: 'Correo electronico'
       category:
         name: 'Nombre'
       product:
@@ -14,29 +19,17 @@ es:
         price: 'ARS$'
         photo: 'Foto'
         category_id: 'Categoría'
-    errors:
-      models:
-        product:
-          attributes:
-            title:
-              blank: 'no puede estar vacío'
-            description:
-              blank: 'no puede estar vacío'
-            price:
-              blank: 'no puede estar vacío'
-            category_id:
-              blank: 'no puede estar vacío'
-        category:
-          attributes:
-            name:
-              blank: 'no puede estar vacío'
 
   common:
     not_logged: 'Debe iniciar sesión para continuar'
+    back: 'Volver'
     confirm: '¿Estás seguro?'
+    not_authorized: 'No esta autorizado para esta accion'
   shared:
     header:
       category: 'Categorías'
+      login: 'Iniciar Sesion'
+      logout: 'Salir'
   categories:
     edit:
       title: 'Editar categoría'
@@ -62,9 +55,13 @@ es:
       create:
         created: '¡Perfecto! ¡Ya te registramos!'
     sessions:
+      new:
+        register: 'Crear una cuenta'
       create:
         created: '¡Bienvenido!'
         failed: 'Login o Contraseña inválidos'
+      destroy:
+        destroyed: 'Hasta la proxima'
 
   products:
     form:

@@ -54,11 +54,13 @@ class ProductsController < ApplicationController
     end
 
     def edit
+        authorize! product
         #le paso la instancia indexada por el param de la url
-        product
+
     end
 
     def update
+        authorize!
         if product.update(product_params)
             redirect_to products_path, notice: t('.updated')
         else
@@ -68,6 +70,7 @@ class ProductsController < ApplicationController
     end
 
     def destroy
+        authorize! product
         if product.destroy
             #por defecto el redirect_to manda un 302 , se debe sobreescribir ese codigo porque sino turbo se confunde
             redirect_to products_path, notice: t('.destroyed'), status: :see_other
@@ -85,7 +88,7 @@ class ProductsController < ApplicationController
     end
 
     def product_params_index
-        params.permit(:query_text,:max_price, :min_price, :category_id,:order_by)
+        params.permit(:query_text,:max_price, :min_price, :category_id,:order_by, :page ,:locale)
     end
 
     def product

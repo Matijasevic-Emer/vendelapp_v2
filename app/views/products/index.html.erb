@@ -3,7 +3,7 @@
   <h2><%= t('.title') %> </h2>
   <%= link_to new_product_path,  'data-turbo-frame': '_top' do %>
     <h3><%= t('.sub-title') %> </h3>
-  <% end %>
+  <% end if Current.user %>
 
   <%= form_with url: products_path, class: 'filterForm', method: :get do |form| %>
     <div>

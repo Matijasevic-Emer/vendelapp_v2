@@ -1,5 +1,12 @@
 class ApplicationController < ActionController::Base
   include Pagy::Backend
+
+  class NotAuthorizedError < StandardError; end
+
+  rescue_from NotAuthorizedError do
+   redirect_to products_path, alert: t('common.not_authorized') unless is_allowed
+  end
+
   # Only allow modern browsers supporting webp images, web push, badges, import maps, CSS nesting, and CSS :has.
   allow_browser versions: :modern
   #Logica para que detecte el idioma del navegador y setee el idioma
@@ -31,4 +38,10 @@ class ApplicationController < ActionController::Base
   def protect_pages
     redirect_to new_session_path, alert: t('common.not_logged') unless Current.user
   end
+
+  def authorize! product
+    is_allowed = product.user_id == Current.user.id
+    raise NotAuthorizedError unless is_allowed
+  end
+
 end

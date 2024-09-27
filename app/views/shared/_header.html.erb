@@ -5,11 +5,21 @@
       <% end %>
   </div>
   <div class="settings">
-      <%= link_to categories_path do %>
-        <h3 class="textHeader"><%= t('.category') %> </h3>
-      <% end %>
 
-      <!-- Dropdown for language selection -->
+    <%= link_to new_session_path do %>
+      <h3 class="textHeader"><%= t('.login') %> </h3>
+    <% end unless Current.user %>
+    <%= link_to session_path(Current.user.id),
+                data: { turbo_confirm: t('common.confirm'),
+                        turbo_method: :delete } do %>
+      <h3 class="textHeader"><%= t('.logout') %> </h3>
+    <% end if Current.user %>
+
+
+    <%= link_to categories_path do %>
+      <h3 class="textHeader"><%= t('.category') %> </h3>
+    <% end if Current.user %>
+    <!-- Dropdown for language selection -->
       <div class="dropdown">
         <button class="dropbtn">Idioma</button>
         <div class="dropdown-content">

@@ -46,6 +46,7 @@
       justify-content: space-between;
   }
 .textHeader{
+    padding: 5px;
     color: var(--header-text-color) !important;
 }
 .brand{

@@ -8,9 +8,13 @@
   <div class="product-price">ARS$ <%= @product.price %></div>
   <%= link_to edit_product_path(@product.id), class: "back-link" do %>
     <h3>Editar</h3>
-  <% end %>
+  <% end if @product.user_id == Current.user.id%>
 
-  <%= link_to 'Eliminar', product_path(@product), data: { turbo_confirm: t('common.confirm'), turbo_method: :delete }, class: "delete-link" %>
+  <%= link_to t('.delete'),
+              product_path(@product),
+              data: { turbo_confirm: t('common.confirm'),
+                      turbo_method: :delete },
+                class: "delete-link" if @product.user_id == Current.user.id %>
 
 </div>
 <%= link_to products_path, class: "back-link" do %>
