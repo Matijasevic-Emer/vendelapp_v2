@@ -6,15 +6,15 @@
   </div>
   <div class="product-description"><%= @product.description %></div>
   <div class="product-price">ARS$ <%= @product.price %></div>
-  <%= link_to edit_product_path(@product.id), class: "back-link" do %>
-    <h3>Editar</h3>
-  <% end if @product.user_id == Current.user.id%>
+
+  <%= link_to t('.edit'), edit_product_path(@product.id), class: "back-link" if @product.owner? %>
+
 
   <%= link_to t('.delete'),
               product_path(@product),
               data: { turbo_confirm: t('common.confirm'),
                       turbo_method: :delete },
-                class: "delete-link" if @product.user_id == Current.user.id %>
+                class: "delete-link" if @product.owner? %>
 
 </div>
 <%= link_to products_path, class: "back-link" do %>
