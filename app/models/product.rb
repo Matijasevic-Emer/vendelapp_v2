@@ -1,4 +1,5 @@
 class Product < ApplicationRecord
+  include Favoritable
   # Ordenar productos
   ORDER_BY = {
     newest: "created_at DESC",
@@ -18,4 +19,7 @@ class Product < ApplicationRecord
   def owner?
     user_id == Current.user&.id
   end
+
+
+
 end

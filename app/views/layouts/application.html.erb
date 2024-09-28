@@ -1,28 +1,20 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= t('app_name')%> | <%= t('meta_title') %></title>
-    <link rel="icon" href="<%= asset_path 'favicon.ico' %>" type="image/x-icon" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<html lang="es">
+<head>
+  <title><%= t('app_name') %> | <%= t('meta_title') %></title>
+  <link rel="icon" href="<%= asset_path 'favicon.ico' %>" type="image/x-icon" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+  <%= javascript_importmap_tags %>
+</head>
+<body class="bg-secondary text-black-400 font-sans">
+<%= render 'shared/flash' %>
+<%= render 'shared/header' %>
+<div class="flex-grow h-full h-100">
+  <%= yield %>
+</div>
+<%= render 'shared/footer' %>
+</body>
 
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-
-    <style>
-      
-    </style>
-  </head>
-
-  <body>
-  <%= render 'shared/flash' %>
-    <%= render 'shared/header' %>
-    <div class="content">
-      <%= yield %>
-    </div>
-    <%= render 'shared/footer' %>
-  </body>
-</html>

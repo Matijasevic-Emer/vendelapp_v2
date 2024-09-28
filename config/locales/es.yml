@@ -29,6 +29,7 @@ es:
     not_authorized: 'No esta autorizado para esta accion'
   shared:
     header:
+      my_favorites: 'Favoritos'
       category: 'Categorías'
       login: 'Iniciar Sesion'
       logout: 'Salir'
@@ -72,6 +73,8 @@ es:
       title: 'Editar producto'
     show:
       title: '¡Cómpralo!'
+      edit: 'Editar'
+      delete: 'Borrar'
     index:
       title: 'Productos'
       sub-title: 'Vender uno+'
@@ -88,3 +91,7 @@ es:
       updated: 'Tu producto ha sido modificado exitosamente'
     destroy:
       destroyed: 'Tu producto ha sido eliminado exitosamente'
+
+  favorites:
+    index:
+      title: 'Aqui estan tus productos favoritos!'

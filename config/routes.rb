@@ -16,9 +16,10 @@ Rails.application.routes.draw do
   # patch '/products/:id', to: 'products#update'
   # delete '/products/:id', to: 'products#destroy'
   #Escribir resources products es equivalente a poner las 7 lineas de arriba
-  resources :products, path: '/'
+
   resources :categories, except: :show
   resources :users, only: :show,  path: '/user' , param: :username
-  resources :favorites, only: :create
-
+  resources :favorites, only: [:create, :destroy, :index], param: :product_id
+    #ojo con el orden aca , la home / debe ir abajo
+  resources :products, path: '/'
 end

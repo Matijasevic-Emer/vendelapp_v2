@@ -56,7 +56,6 @@ class ProductsController < ApplicationController
     def edit
         authorize! product
         #le paso la instancia indexada por el param de la url
-
     end
 
     def update
@@ -88,10 +87,18 @@ class ProductsController < ApplicationController
     end
 
     def product_params_index
-        params.permit(:query_text,:max_price, :min_price, :category_id,:order_by, :page ,:locale)
+        params.permit(:query_text,
+                      :max_price,
+                      :min_price,
+                      :category_id,
+                      :order_by,
+                      :page,
+                      :locale,
+                      :favorites,
+                      :user_id)
     end
 
     def product
-        @product = Product.find(params[:id])
+        @product ||= Product.find(params[:id])
     end
 end
