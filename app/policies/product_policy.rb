@@ -1,5 +1,4 @@
-class ProductPolicy
-
+class ProductPolicy < BasePolicy
   def edit
     record.owner?
   end

@@ -6,9 +6,7 @@
   <% end if Current.user %>
 
   <%= form_with url: products_path, class: 'filterForm', method: :get do |form| %>
-    <div>
-      <%= form.text_field :query_text, placeholder: t('.query_text'), onChange: 'this.form.requestSubmit()',value: params[:query_text] %>
-    </div>
+    <%= form.text_field :query_text, placeholder: t('.query_text'), onChange: 'this.form.requestSubmit()',value: params[:query_text] %>
     <%= form.number_field :min_price, placeholder: t('.min_price'), onChange: 'this.form.requestSubmit()',value: params[:min_price] %>
     <%= form.number_field :max_price, placeholder: t('.max_price'), onChange: 'this.form.requestSubmit()',value: params[:max_price] %>
     <%= form.select :order_by, options_for_select([[t('.newest'),"newest"],[t('.cheapest'),"cheapest"],[t('.expensivest'),"expensivest"]], params[:order_by]) ,

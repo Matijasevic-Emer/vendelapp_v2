@@ -21,6 +21,8 @@ es:
         category_id: 'Categoría'
 
   common:
+    view_more_products: 'Ver mas productos de %{username}'
+    not_found: 'No se ha encotrado :('
     not_logged: 'Debe iniciar sesión para continuar'
     back: 'Volver'
     confirm: '¿Estás seguro?'

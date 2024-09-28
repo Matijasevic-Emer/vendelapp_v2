@@ -6,6 +6,11 @@
   </div>
   <div class="product-description"><%= @product.description %></div>
   <div class="product-price">ARS$ <%= @product.price %></div>
+  <%= link_to '❤️',
+              favorites_path(product_id: @product.id),
+              data: { turbo_method: :post },
+              class: "like-link"  %>
+<%= link_to t('common.view_more_products',username:@product.user.username ), user_path(@product.user.username) %>
 
   <%= link_to t('.edit'), edit_product_path(@product.id), class: "back-link" if @product.owner? %>
 
@@ -18,5 +23,7 @@
 
 </div>
 <%= link_to products_path, class: "back-link" do %>
-  <h3>Volver</h3>
+  <h3><% t('common.back')%></h3>
 <% end %>
+
+

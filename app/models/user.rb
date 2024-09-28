@@ -19,6 +19,9 @@ class User < ApplicationRecord
   before_save :downcase_attributes
 
   has_many :products, dependent: :destroy
+  has_many :favorites, dependent: :destroy
+
+
   private
   def downcase_attributes
     self.username = username.downcase

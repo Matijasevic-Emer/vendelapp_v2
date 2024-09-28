@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   namespace :authentication, path: '', as: '' do
     resources :users, only: [:new, :create], path: '/register', path_names: { new: '/'}
     resources :sessions, only: [:new, :create, :destroy], path: '/login', path_names: { new: '/'}
-    end
-  resources :categories
+  end
+
     # Defines the root path route ("/")
   # root "posts#index"
   # root "products#index"
@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   #Escribir resources products es equivalente a poner las 7 lineas de arriba
   resources :products, path: '/'
   resources :categories, except: :show
-
+  resources :users, only: :show,  path: '/user' , param: :username
+  resources :favorites, only: :create
 
 end
