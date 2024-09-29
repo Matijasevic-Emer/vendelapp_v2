@@ -1,52 +1,48 @@
 en:
   app_name: 'SocialMarket'
-  meta_title: 'Buy and Sell second-hand products!'
+  meta_title: 'Buy and Sell Second-Hand Products!'
   activerecord:
     models:
+      user: User
       product: Product
       category: Category
     attributes:
+      user:
+        username: 'Username'
+        password: 'Password'
+        email: 'Email'
       category:
         name: 'Name'
       product:
         title: 'Title'
         description: 'Description'
-        price: 'Price'
+        price: 'ARS$'
         photo: 'Photo'
         category_id: 'Category'
-    errors:
-      models:
-        product:
-          attributes:
-            title:
-              blank: 'cannot be blank'
-            description:
-              blank: 'cannot be blank'
-            price:
-              blank: 'cannot be blank'
-            category_id:
-              blank: 'cannot be blank'
-        category:
-          attributes:
-            name:
-              blank: 'cannot be blank'
 
   common:
+    view_more_products: 'View more products from %{username}'
+    not_found: 'Not found :('
     not_logged: 'You must log in to continue'
+    back: 'Back'
     confirm: 'Are you sure?'
+    not_authorized: 'You are not authorized for this action'
   shared:
     header:
+      my_favorites: 'Favorites'
       category: 'Categories'
+      login: 'Log In'
+      logout: 'Log Out'
   categories:
     edit:
-      title: 'Edit category'
+      title: 'Edit Category'
       back: 'Back'
     new:
-      title: 'Create a new Category'
+      title: 'Create a New Category'
       back: 'Back'
     index:
       title: 'Categories'
-      new: 'Add one'
+      new: 'Add One'
     category:
       edit: 'Edit'
       delete: 'Delete'
@@ -59,33 +55,46 @@ en:
 
   authentication:
     users:
+      new:
+        register: 'Let’s get started!'
       create:
         created: 'Perfect! You are registered!'
     sessions:
+      new:
+        login: 'Log In'
+        register: 'Create an Account'
       create:
         created: 'Welcome!'
-        failed: 'Invalid Login or Password'
+        failed: 'Invalid login or password'
+      destroy:
+        destroyed: 'See you next time'
 
   products:
     form:
       title: 'A fool and his money are easily parted!'
     edit:
-      title: 'Edit product'
+      title: 'Edit Product'
     show:
-      title: 'Buy it!'
+      title: 'Buy It!'
+      edit: 'Edit'
+      delete: 'Delete'
     index:
       title: 'Products'
-      sub-title: 'Sell one+'
+      add: 'Sell One+'
       all: 'All'
       min_price: 'From ARS$'
-      max_price: 'To ARS$'
-      query_text: 'What are you looking for?'
-      newest: 'Newest first'
-      expensivest: 'Most expensive first'
-      cheapest: 'Cheapest first'
+      max_price: 'Up to ARS$'
+      query_text: 'What would you like to search for?'
+      newest: 'Newest First'
+      expensivest: 'Most Expensive First'
+      cheapest: 'Cheapest First'
     create:
-      created: 'Your product has been successfully created'
+      created: 'Your product has been created successfully'
     update:
-      updated: 'Your product has been successfully updated'
+      updated: 'Your product has been updated successfully'
     destroy:
-      destroyed: 'Your product has been successfully deleted'
+      destroyed: 'Your product has been deleted successfully'
+
+  favorites:
+    index:
+      title: 'Here are your favorite products!'

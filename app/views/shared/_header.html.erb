@@ -32,16 +32,36 @@
           <h3><%= t('.category') %></h3>
         <% end %>
 
-        <!-- Dropdown for language selection -->
-        <div class="relative">
-          <button class="dropbtn bg-claro text-oscuro p-2 rounded-md mb-2 md:mb-0">Idioma</button>
-          <div class="absolute bg-claro text-oscuro mt-2 py-2 rounded-md shadow-md hidden" id="language-dropdown">
-            <%= link_to 'Inglés: 🇬🇧', url_for(locale: 'en'), class: 'block px-4 py-2 hover:bg-oscuro hover:text-claro' %>
-            <%= link_to 'Español: 🇪🇸', url_for(locale: 'es'), class: 'block px-4 py-2 hover:bg-oscuro hover:text-claro' %>
-            <%= link_to 'Croata: 🇭🇷', url_for(locale: 'hr'), class: 'block px-4 py-2 hover:bg-oscuro hover:text-claro' %>
-          </div>
-        </div>
       <% end %>
+      <!-- Dropdown for language selection -->
+      <div class="relative">
+        <button class="dropbtn bg-primary text-white p-2 rounded-md mb-2 md:mb-0" onclick="toggleDropdown()">Idioma</button>
+        <div class="absolute bg-white text-black mt-2 py-2 rounded-md shadow-md hidden" id="language-dropdown">
+          <%= link_to 'Inglés: 🇬🇧', url_for(locale: 'en'), class: 'block px-4 py-2 hover:bg-tertiary hover:text-black' %>
+          <%= link_to 'Español: 🇪🇸', url_for(locale: 'es'), class: 'block px-4 py-2 hover:bg-tertiary hover:text-black' %>
+          <%= link_to 'Croata: 🇭🇷', url_for(locale: 'hr'), class: 'block px-4 py-2 hover:bg-tertiary hover:text-black' %>
+        </div>
+      </div>
     </div>
   </div>
 </header>
+
+<script>
+    function toggleDropdown() {
+        const dropdown = document.getElementById('language-dropdown');
+        dropdown.classList.toggle('hidden');
+    }
+
+    // Close dropdown if clicked outside
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+            const dropdowns = document.getElementsByClassName("absolute");
+            for (let i = 0; i < dropdowns.length; i++) {
+                const openDropdown = dropdowns[i];
+                if (!openDropdown.classList.contains('hidden')) {
+                    openDropdown.classList.add('hidden');
+                }
+            }
+        }
+    }
+</script>

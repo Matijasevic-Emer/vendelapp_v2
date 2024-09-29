@@ -1,49 +1,45 @@
 hr:
   app_name: 'SocialMarket'
-  meta_title: 'Kupite i prodajte rabljene proizvode!'
+  meta_title: 'Kupite i prodajte proizvode iz druge ruke!'
   activerecord:
     models:
+      user: Korisnik
       product: Proizvod
       category: Kategorija
     attributes:
+      user:
+        username: 'Korisničko ime'
+        password: 'Lozinka'
+        email: 'Email'
       category:
         name: 'Ime'
       product:
         title: 'Naslov'
         description: 'Opis'
-        price: 'Cijena'
-        photo: 'Slika'
+        price: 'ARS$'
+        photo: 'Foto'
         category_id: 'Kategorija'
-    errors:
-      models:
-        product:
-          attributes:
-            title:
-              blank: 'ne smije biti prazno'
-            description:
-              blank: 'ne smije biti prazno'
-            price:
-              blank: 'ne smije biti prazno'
-            category_id:
-              blank: 'ne smije biti prazno'
-        category:
-          attributes:
-            name:
-              blank: 'ne smije biti prazno'
 
   common:
-    not_logged: 'Morate se prijaviti da biste nastavili'
+    view_more_products: 'Pogledajte više proizvoda od %{username}'
+    not_found: 'Nije pronađeno :('
+    not_logged: 'Morate se prijaviti za nastavak'
+    back: 'Povratak'
     confirm: 'Jeste li sigurni?'
+    not_authorized: 'Niste ovlašteni za ovu akciju'
   shared:
     header:
+      my_favorites: 'Favoriti'
       category: 'Kategorije'
+      login: 'Prijavite se'
+      logout: 'Odjava'
   categories:
     edit:
-      title: 'Uredite kategoriju'
-      back: 'Natrag'
+      title: 'Uredi kategoriju'
+      back: 'Povratak'
     new:
-      title: 'Stvorite novu Kategoriju'
-      back: 'Natrag'
+      title: 'Kreirajte novu kategoriju'
+      back: 'Povratak'
     index:
       title: 'Kategorije'
       new: 'Dodajte jednu'
@@ -51,7 +47,7 @@ hr:
       edit: 'Uredi'
       delete: 'Izbriši'
     create:
-      created: 'Kategorija je uspješno stvorena'
+      created: 'Kategorija je uspješno kreirana'
     update:
       updated: 'Kategorija je uspješno ažurirana'
     destroy:
@@ -59,33 +55,46 @@ hr:
 
   authentication:
     users:
+      new:
+        register: 'Krenimo!'
       create:
-        created: 'Savršeno! Uspješno ste registrirani!'
+        created: 'Savršeno! Već ste registrirani!'
     sessions:
+      new:
+        login: 'Prijavite se'
+        register: 'Kreirajte račun'
       create:
         created: 'Dobrodošli!'
-        failed: 'Nevažeća prijava ili lozinka'
+        failed: 'Neispravna prijava ili lozinka'
+      destroy:
+        destroyed: 'Vidimo se sljedeći put'
 
   products:
     form:
-      title: 'Budala i njegov novac brzo se razdvajaju!'
+      title: 'Ludak i njegov novac lako se razdvajaju!'
     edit:
-      title: 'Uredite proizvod'
+      title: 'Uredi proizvod'
     show:
       title: 'Kupi ga!'
+      edit: 'Uredi'
+      delete: 'Izbriši'
     index:
       title: 'Proizvodi'
-      sub-title: 'Prodajte jedan+'
-      all: 'Svi'
+      add: 'Prodaj jedan+'
+      all: 'Sve'
       min_price: 'Od ARS$'
       max_price: 'Do ARS$'
-      query_text: 'Što tražite?'
-      newest: 'Najnoviji prvi'
-      expensivest: 'Najskuplji prvi'
-      cheapest: 'Najjeftiniji prvi'
+      query_text: 'Što želite pretraživati?'
+      newest: 'Najnoviji prvo'
+      expensivest: 'Najskuplji prvo'
+      cheapest: 'Najjeftiniji prvo'
     create:
-      created: 'Vaš proizvod je uspješno stvoren'
+      created: 'Vaš proizvod je uspješno kreiran'
     update:
       updated: 'Vaš proizvod je uspješno ažuriran'
     destroy:
       destroyed: 'Vaš proizvod je uspješno izbrisan'
+
+  favorites:
+    index:
+      title: 'Evo vaših omiljenih proizvoda!'

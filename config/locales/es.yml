@@ -1,6 +1,6 @@
 es:
   app_name: 'SocialMarket'
-  meta_title: '¡Compra y Vende productos de segunda mano!'
+  meta_title: '¡Compra y vende productos de segunda mano!'
   activerecord:
     models:
       user: Usuario
@@ -8,9 +8,9 @@ es:
       category: Categoría
     attributes:
       user:
-        username: 'Nombre de Usuario'
+        username: 'Nombre de usuario'
         password: 'Contraseña'
-        email: 'Correo electronico'
+        email: 'Correo electrónico'
       category:
         name: 'Nombre'
       product:
@@ -21,24 +21,24 @@ es:
         category_id: 'Categoría'
 
   common:
-    view_more_products: 'Ver mas productos de %{username}'
-    not_found: 'No se ha encotrado :('
+    view_more_products: 'Ver más productos de %{username}'
+    not_found: 'No se ha encontrado :('
     not_logged: 'Debe iniciar sesión para continuar'
     back: 'Volver'
     confirm: '¿Estás seguro?'
-    not_authorized: 'No esta autorizado para esta accion'
+    not_authorized: 'No está autorizado para esta acción'
   shared:
     header:
       my_favorites: 'Favoritos'
       category: 'Categorías'
-      login: 'Iniciar Sesion'
+      login: 'Iniciar sesión'
       logout: 'Salir'
   categories:
     edit:
       title: 'Editar categoría'
       back: 'Volver'
     new:
-      title: 'Crea una nueva Categoría'
+      title: 'Crear una nueva categoría'
       back: 'Volver'
     index:
       title: 'Categorías'
@@ -55,20 +55,24 @@ es:
 
   authentication:
     users:
+      new:
+        register: '¡A darle átomos!'
       create:
         created: '¡Perfecto! ¡Ya te registramos!'
     sessions:
       new:
+        login: 'Ingresar'
         register: 'Crear una cuenta'
       create:
         created: '¡Bienvenido!'
-        failed: 'Login o Contraseña inválidos'
+        failed: 'Login o contraseña inválidos'
       destroy:
-        destroyed: 'Hasta la proxima'
+        destroyed: 'Hasta la próxima'
 
   products:
     form:
       title: '¡Un tonto y su dinero son fácilmente separados!'
+      save: 'A darle atomos!'
     edit:
       title: 'Editar producto'
     show:
@@ -77,7 +81,7 @@ es:
       delete: 'Borrar'
     index:
       title: 'Productos'
-      sub-title: 'Vender uno+'
+      add: 'Vender uno+'
       all: 'Todos'
       min_price: 'Desde ARS$'
       max_price: 'Hasta ARS$'
@@ -94,4 +98,4 @@ es:
 
   favorites:
     index:
-      title: 'Aqui estan tus productos favoritos!'
+      title: '¡Aquí están tus productos favoritos!'
